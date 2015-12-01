@@ -1,7 +1,5 @@
 #!/bin/bash
 ROOT_PATH=$(dirname $0)
-echo "Build may cost a few minutes, please wait..."
-docker build -t tidb $ROOT_PATH
 docker kill $(docker ps |grep "start-all.sh") 2>/dev/null
 id=$(docker run -d -p 4444:4000 -it tidb)
 sleep 30

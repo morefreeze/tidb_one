@@ -16,8 +16,7 @@ RUN apt-get update && apt-get install -y software-properties-common && \
     apt-get install -y git \
         maven \
         wget \
-        make \
-        mysql-client && \
+        make && \
     wget https://archive.apache.org/dist/hbase/0.98.15/hbase-0.98.15-hadoop2-bin.tar.gz && \
     tar -C / -xzf hbase-0.98.15-hadoop2-bin.tar.gz && \
     git clone https://github.com/pingcap/themis.git && \
@@ -44,6 +43,7 @@ RUN apt-get update && apt-get install -y software-properties-common && \
         $GOPATH/src \
         $GOPATH/pkg \
         /var/cache/oracle-jdk7-installer/ \
+        /var/lib/apt/lists/* \
         /usr/local/go && \
     cd /usr/lib/jvm/java-7-oracle/ && find -not -path "./jre*" -delete
 
