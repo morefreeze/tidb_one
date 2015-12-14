@@ -31,7 +31,8 @@ RUN apt-get update && apt-get install -y software-properties-common && \
     cd $GOPATH/src/github.com/pingcap/tidb && \
     make && make server && \
     cp $GOPATH/src/github.com/pingcap/tidb/tidb-server/tidb-server $GOPATH/bin/ && \
-    #apt-get install --no-install-recommends --auto-remove -y git && \
+    apt-get remove -y maven \
+        wget && \
     apt-get clean autoclean && \
     apt-get autoremove -y && \
     rm -rf /tmp/* && \
@@ -40,7 +41,7 @@ RUN apt-get update && apt-get install -y software-properties-common && \
         themis \
         hbase-0.98.15-hadoop2-bin.tar.gz \
         hbase-0.98.15-hadoop2/docs \
-        $GOPATH/src \
+        #$GOPATH/src \
         $GOPATH/pkg \
         /var/cache/oracle-jdk7-installer/ \
         /var/lib/apt/lists/* \
