@@ -31,7 +31,7 @@ RUN apt-get update && apt-get install -y software-properties-common && \
     cd $GOPATH/src/github.com/pingcap/tidb && \
     make && make server && \
     cp $GOPATH/src/github.com/pingcap/tidb/tidb-server/tidb-server $GOPATH/bin/ && \
-    apt-get install --no-install-recommends --auto-remove -y git && \
+    #apt-get install --no-install-recommends --auto-remove -y git && \
     apt-get clean autoclean && \
     apt-get autoremove -y && \
     rm -rf /tmp/* && \
