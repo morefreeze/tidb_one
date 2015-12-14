@@ -31,8 +31,6 @@ RUN apt-get update && apt-get install -y software-properties-common && \
     cd $GOPATH/src/github.com/pingcap/tidb && \
     make && make server && \
     cp $GOPATH/src/github.com/pingcap/tidb/tidb-server/tidb-server $GOPATH/bin/ && \
-    apt-get remove -y maven \
-        wget && \
     apt-get clean autoclean && \
     apt-get autoremove -y && \
     rm -rf /tmp/* && \
